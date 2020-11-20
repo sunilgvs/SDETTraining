@@ -16,25 +16,25 @@ WebDriver driver = new FirefoxDriver();
 		
 		System.out.println("Page Tittle  : "+driver.getTitle());
 		
-		List<WebElement> cols = driver.findElements(By.xpath("//table[contains(@class,'striped')]/tbody/tr[1]/td]"));
+		List<WebElement> cols = driver.findElements(By.xpath("//*[@id='sortableTable']/thead/tr/th[1]"));
 		
 		System.out.println("No of Coloumns : "+ cols.size());
 		
-List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@class, 'striped')/tbody/tr]"));
+List<WebElement> rows = driver.findElements(By.xpath("//*[@id='sortableTable']/tbody/tr"));
 		
 		System.out.println("No of Rows : "+ rows.size());
 		
-		List<WebElement> thirdRow = driver.findElements(By.xpath("//table[contains(@class, 'striped')/tbody/tr[3]/td]"));
+		List<WebElement> thirdRow = driver.findElements(By.xpath("//*[@id='sortableTable']/tbody/tr[3]/td"));
 		
 		for(WebElement rowlist : thirdRow) {
 			
-			System.out.println("Cell Value :"+ rowlist.getText() );
+			System.out.println("Third Row Values  : "+ rowlist.getText() );
 						
 		}
 		
-		WebElement secondrow = driver.findElement(By.xpath("//table[contains(@class, 'striped')/tbody/tr[2]/td[2]]"));
+		WebElement secondrow = driver.findElement(By.xpath("//*[@id='sortableTable']/tbody/tr[2]/td[2]"));
 		
-		System.out.println("Cell Value :"+ secondrow.getText() );
+		System.out.println("Second Row Second Coloumn Value :"+ secondrow.getText() );
 			
 		driver.close();
 		
