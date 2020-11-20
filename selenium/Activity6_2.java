@@ -16,28 +16,28 @@ WebDriver driver = new FirefoxDriver();
 		
 		System.out.println("Page Tittle  : "+driver.getTitle());
 		
-		WebElement header = driver.findElement(By.xpath("//table[@id='sortableTable')/thead/tr/th"));
+		List<WebElement> header = driver.findElements(By.xpath("//*[@id='sortableTable']/thead/tr/th"));
 		
-		System.out.println("No of Coloumns : "+header.getSize());
+		System.out.println("No of Coloumns : "+header.size());
 		
-		WebElement row = driver.findElement(By.xpath("//table[@id='sorttableTable')/tbody/tr"));
+		List<WebElement> row = driver.findElements(By.xpath("//*[@id='sortableTable']/tbody/tr"));
 		
-		System.out.println("No of Rows : "+row.getSize());
+		System.out.println("No of Rows : "+row.size());
 		
-		WebElement cellvalueBefore = driver.findElement(By.xpath("//table[@id='sorttableTable')/tbody/tr[2]/td[2]"));
+		WebElement cellvalueBefore = driver.findElement(By.xpath("//*[@id='sortableTable']/tbody/tr[2]/td[2]"));
 		
 		System.out.println("Printing Second Row Second before sorting  : "+cellvalueBefore.getText());
 		
 		
-		driver.findElement(By.xpath("//table[@id='sorttableTable')/thead/tr/th[1]")).click();
+		driver.findElement(By.xpath("//*[@id='sortableTable']/thead/tr/th[1]")).click();
 		
 		
-WebElement cellvalueAfter = driver.findElement(By.xpath("//table[@id='sorttableTable')/tbody/tr[2]/td[2]"));
+		WebElement cellvalueAfter = driver.findElement(By.xpath("//*[@id='sortableTable']/tbody/tr[2]/td[2]"));
 		
 		System.out.println("Printing Second Row Second coloumn after sorting : "+cellvalueAfter.getText());
 		
 		
-		 WebElement footer = driver.findElement(By.xpath("//table[@id='sortableTable']/tfoot/tr"));
+		 WebElement footer = driver.findElement(By.xpath("//*[@id='sortableTable']/tfoot/tr"));
 
 	        System.out.println("Table footer values: " + footer.getText());
 		
