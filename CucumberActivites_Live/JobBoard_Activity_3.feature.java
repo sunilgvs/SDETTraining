@@ -12,7 +12,7 @@ Scenario: Post a job using details passed from feature file
 
 
 
-    When User enters"System Engineer"and"Bangalore"and"I want to apply for this Job"
+    When User enters"Sr System Engineer"and"Hyderabad"and"I want to apply for this Job"
 
 
 
